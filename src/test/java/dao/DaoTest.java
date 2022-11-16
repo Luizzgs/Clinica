@@ -13,6 +13,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import modelo.Usuario;
 import static org.junit.jupiter.api.Assertions.*;
+import util.ExcecaoIdNaoEncontrado;
+import util.JpaUtil;
 
 /**
  *
@@ -47,7 +49,22 @@ public class DaoTest {
                 "astolfo", "123"); 
         dao.inserir(u);     
     }*/
+   
+//    @Test
+//    public void testInserirAnimal() throws ExcecaoIdNaoEncontrado{
+//        Dao<Animal> dao = new Dao(Animal.class);
+//        Dao<Tutor> daoTutor = new Dao(Tutor.class);
+//        Tutor tutor = daoTutor.buscarPorId(2);  // existe tutor com codigo 2
+//        // String classe, String nome, Tutor tutor
+//        Animal a = new Animal("Cachorro", "Rex", tutor); 
+//        dao.inserir(a);        
+//    }
     
+    public void testExcluir(){
+        
+    }
+   
+  
     
     
 }
