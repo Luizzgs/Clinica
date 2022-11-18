@@ -12,5 +12,6 @@ dao\Dao.class
 com\clinica\JAXRSConfiguration.class
 modelo\Tutor.class
 com\clinica\resources\JavaEE8Resource.class
+controle\GerenciarAnimalControle.class
 modelo\Usuario.class
 util\JsfUtil.class

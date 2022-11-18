@@ -31,10 +31,10 @@ public class Dao<T> implements Serializable {
         T objeto;
         manager = JpaUtil.getEntityManager();
         objeto = manager.find(classe, id);
-        if(objeto == null){
+        if (objeto == null){
             manager.close();
-            throw new ExcecaoIdNaoEncontrado(id);
-        }else
+            throw new ExcecaoIdNaoEncontrado(id);             
+        }
         manager.close();
         return objeto;
     }

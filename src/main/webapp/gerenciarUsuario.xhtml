@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"           
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
         <title>Sem título</title>
@@ -18,13 +19,17 @@
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Nome:  " />
                     <p:inputText id="nome" 
-                                 value="#{gerenciarUsuarioControle.usuario.nome}"/>
+                                 value="#{gerenciarUsuarioControle.usuario.nome}">
+                                 <f:validateRegex pattern="[a-zA-Z]+"/>
+                    </p:inputText>
                     <h:outputLabel value="Endereço:  " />
                     <p:inputText id="endereco" 
                                  value="#{gerenciarUsuarioControle.usuario.endereco}"/>
                     <h:outputLabel value="Telefone:  " />
                     <p:inputText id="telefone" 
-                                 value="#{gerenciarUsuarioControle.usuario.telefone}"/>
+                                 value="#{gerenciarUsuarioControle.usuario.telefone}" >
+                                 <f:validateRegex pattern="(\(?\d{2}\)?\s)?(\d{4,5}\-?\d{4})"/> 
+                    </p:inputText>
                     <h:outputLabel value="Data nascimento:  " />
                     <p:calendar id="data" pattern="dd/MM/yyyy"
                                 value="#{gerenciarUsuarioControle.usuario.dataNascimento}" 
