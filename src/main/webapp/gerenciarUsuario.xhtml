@@ -35,7 +35,8 @@
                                 value="#{gerenciarUsuarioControle.usuario.dataNascimento}" 
                                 required="true" requiredMessage="Data obrigatória"
                                 showOn="button"
-                                locale="pt"/>
+                                locale="pt"
+                                maxdate="yearRange=c-3650:c"/>
                     <h:outputLabel value="Login:  " />
                     <p:inputText id="login" 
                                  value="#{gerenciarUsuarioControle.usuario.login}">

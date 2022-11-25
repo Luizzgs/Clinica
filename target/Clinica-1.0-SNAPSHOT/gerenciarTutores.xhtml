@@ -30,7 +30,8 @@
                                 value="#{gerenciarTutorControle.tutor.dataNascimento}" 
                                 required="true" requiredMessage="Data obrigatória"
                                 showOn="button"
-                                locale="pt"/>               
+                                locale="pt"
+                                maxdate="yearRange=c-3650:c"/>               
                     <h:outputLabel value="CPF" />
                     <p:inputText id="cpf" 
                                  value="#{gerenciarTutorControle.tutor.cpf}"/>

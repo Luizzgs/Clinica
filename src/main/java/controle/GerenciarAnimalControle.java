@@ -15,8 +15,8 @@ import util.JsfUtil;
 public class GerenciarAnimalControle implements Serializable {
     private Dao<Animal> dao; 
     private Dao<Tutor> daoTutor;
-    private List<Tutor> listaTutores; //criar lista unica para cada classe 
-    private List<Animal> lista;
+    private List<Tutor> listaTutores; //criar listaAnimais unica para cada classe 
+    private List<Animal> listaAnimais;
     private Animal animal;
     private Boolean mostraPopupAlteracao;
     
@@ -26,7 +26,7 @@ public class GerenciarAnimalControle implements Serializable {
         daoTutor = new Dao(Tutor.class);
         animal = new Animal();
         listaTutores = daoTutor.listarTodos();        
-        lista = dao.listarTodos();       
+        listaAnimais = dao.listarTodos();       
         mostraPopupAlteracao = false;
     }
     
@@ -38,26 +38,28 @@ public class GerenciarAnimalControle implements Serializable {
     
     public void excluir(Animal excluido) {
         dao.excluir(excluido.getCodigo());
-        lista = dao.listarTodos();
+        listaAnimais = dao.listarTodos();
     }
     
     public void fecharPopupAlteracao(){
         mostraPopupAlteracao = false; 
     }
-    
-     public List<Tutor> getLista() {
-        return listaTutores;
+
+    public List<Animal> getListaAnimais() {
+        return listaAnimais;
     }
 
-    public void setLista(List<Tutor> listar) {
-        listar = listaTutores;
+    public void setListaAnimais(List<Animal> listaAnimais) {
+        this.listaAnimais = listaAnimais;
     }
-    
+
+   
+        
     public String salvar() {
         dao.inserir(animal);
         animal = new Animal(); // limpa os campos 
         JsfUtil.mostrarSucesso("Animal cadastrado");
-        lista = dao.listarTodos(); // atualiza tabela 
+        listaAnimais = dao.listarTodos(); // atualiza tabela 
         return null; 
     }
 
@@ -65,7 +67,7 @@ public class GerenciarAnimalControle implements Serializable {
         dao.alterar(animal);
         animal = new Animal(); // limpa os campos 
         JsfUtil.mostrarSucesso("Animal alterado");
-        lista = dao.listarTodos(); // atualiza tabela 
+        listaAnimais = dao.listarTodos(); // atualiza tabela 
         return null; 
     }
           

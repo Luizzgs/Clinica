@@ -1,7 +1,9 @@
+util\AnimalConverter.class
 controle\GerenciarUsuarioControle.class
 controle\IndexControle.class
 modelo\Animal.class
 modelo\Consulta.class
+controle\GerenciarConsultaControle.class
 dao\DaoUsuario.class
 modelo\Pessoa.class
 util\TutorConverter.class
