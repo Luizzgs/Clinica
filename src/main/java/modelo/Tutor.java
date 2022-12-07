@@ -18,6 +18,7 @@ import javax.persistence.Table;
 public class Tutor extends Pessoa implements Serializable {
     
     @Column(length = 20)
+    
     private String cpf; 
     
     @OneToMany (mappedBy = "tutor", fetch = FetchType.EAGER,

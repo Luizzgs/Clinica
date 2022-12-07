@@ -5,7 +5,7 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Sem título</title>
+        <title>Login</title>
     </h:head>
     <h:body > 
        
@@ -18,11 +18,10 @@
                     </p:inputText>
                     <h:outputLabel value="Senha: " />
                     <p:password value="#{indexControle.usuario.senha}"/>
-                    <p/>      
-                    <p:commandButton value="Entrar" styleClass="botao" action="menu" />
-                    <!--p:commandButton value="Entrar"  
+                    <p/>  
+                    <p:commandButton value="Entrar"  
                                      action="#{indexControle.autenticar()}"
-                                     update="@form" /-->
+                                     update="@form"/>
                 </h:panelGrid>
                 <p:messages showIcon="false" closable="true" />
             </h:form> 

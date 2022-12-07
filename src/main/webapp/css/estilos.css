@@ -1,0 +1,36 @@
+* {
+    font-size: 20px;
+}
+
+.body {
+    display: flex;
+    position: relative;
+}
+
+.formulario {
+    width: 500px;
+    height: 500px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 3px;
+    display: flex;
+    flex-direction: column;
+    align-content: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: gainsboro;
+}
+
+.item {
+    margin-bottom: 10px !important;
+    color: white !important;
+    align-self: center !important;
+    
+}

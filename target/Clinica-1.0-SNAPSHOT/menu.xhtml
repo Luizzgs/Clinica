@@ -5,19 +5,20 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Sem título</title>
+        <title>Menu Principal</title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen"/>
     </h:head>
-    <h:body > 
-        <h:form >
-            <p:commandLink  action="gerenciarUsuario" value="Gerenciar Usuários" styleClass="botaoLink" />
+    <h:body styleClass="body"> 
+        <h:form styleClass="formulario">
+            <p:commandLink  action="gerenciarUsuario" value="Gerenciar Usuários" styleClass="item" />
             <p/>
-            <p:commandLink  action="gerenciarTutores" value="Gerenciar Tutores" styleClass="botaoLink" />
+            <p:commandLink  action="gerenciarTutores" value="Gerenciar Tutores" styleClass="item" />
             <p/>
-            <p:commandLink  action="gerenciarAnimais" value="Gerenciar Animais" styleClass="botaoLink" />
+            <p:commandLink  action="gerenciarAnimais" value="Gerenciar Animais" styleClass="item" />
             <p/>
-            <p:commandLink action="gerenciarConsultas" value="Gerenciar Consultas" styleClass="botaoLink" />
+            <p:commandLink action="gerenciarConsultas" value="Gerenciar Consultas" styleClass="item" />
             <p/>
-             <p:commandLink action="index" value="Sair" styleClass="botaoLink" />
+             <p:commandLink action="index" value="Sair" styleClass="item" />
             <p/> 
             
             

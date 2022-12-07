@@ -6,7 +6,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
-        <title>Sem título</title>
+        <title>Usuarios</title>
     </h:head>
     <h:body > 
         <h:panelGrid columns="2" style="width: 100%; text-align: right;">
@@ -19,17 +19,21 @@
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Nome:  " />
                     <p:inputText id="nome" 
-                                 value="#{gerenciarUsuarioControle.usuario.nome}">
-                                 <f:validateRegex pattern="[a-zA-Z]+"/>
-                    </p:inputText>
+                                 value="#{gerenciarUsuarioControle.usuario.nome}"
+                                 required="true"
+                                 requiredMessage="Nome obrigatório"/>                    
                     <h:outputLabel value="Endereço:  " />
                     <p:inputText id="endereco" 
-                                 value="#{gerenciarUsuarioControle.usuario.endereco}"/>
+                                 value="#{gerenciarUsuarioControle.usuario.endereco}"
+                                 required="true"
+                                 requiredMessage="Endereço obrigatório"/>
                     <h:outputLabel value="Telefone:  " />
-                    <p:inputText id="telefone" 
-                                 value="#{gerenciarUsuarioControle.usuario.telefone}" >
-                                 <f:validateRegex pattern="(\(?\d{2}\)?\s)?(\d{4,5}\-?\d{4})"/> 
-                    </p:inputText>
+                    <p:inputMask id="telefone" 
+                                 value="#{gerenciarUsuarioControle.usuario.telefone}" 
+                                 mask="(99)99999-9999" 
+                                 validateMask="true"
+                                 required="true"
+                                 requiredMessage="Telefone obrigatório"/>
                     <h:outputLabel value="Data nascimento:  " />
                     <p:calendar id="data" pattern="dd/MM/yyyy"
                                 value="#{gerenciarUsuarioControle.usuario.dataNascimento}" 
@@ -39,12 +43,17 @@
                                 maxdate="yearRange=c-3650:c"/>
                     <h:outputLabel value="Login:  " />
                     <p:inputText id="login" 
-                                 value="#{gerenciarUsuarioControle.usuario.login}">
-                        <p:ajax event="change" listener="#{gerenciarUsuarioControle.converter()}"
-                                update="login" />
+                                 value="#{gerenciarUsuarioControle.usuario.login}"
+                                 required="true"
+                                 requiredMessage="Login obrigatório">
+                                <f:validateRegex pattern="[a-zA-Z]+"/>
+                                <p:ajax event="change" listener="#{gerenciarUsuarioControle.converter()}"
+                                update="login"/>
                     </p:inputText>
                     <h:outputLabel value="Senha" />
-                    <p:password value="#{gerenciarUsuarioControle.usuario.senha}"/>
+                    <p:password value="#{gerenciarUsuarioControle.usuario.senha}"
+                                required="true"
+                                requiredMessage="Senha obrigatória"/>
                     <p:commandButton value="cancelar" immediate="true" action="menu"/>
                     <p:commandButton value="salvar" 
                                      action="#{gerenciarUsuarioControle.salvar()}"
@@ -110,13 +119,19 @@
                                  value="#{gerenciarUsuarioControle.usuario.codigo}"/>
                     <h:outputLabel value="Nome:  " />
                     <p:inputText id="nome2" 
-                                 value="#{gerenciarUsuarioControle.usuario.nome}"/>
+                                 value="#{gerenciarUsuarioControle.usuario.nome}"
+                                 required="true"
+                                 requiredMessage="Nome obrigatório"/>
                     <h:outputLabel value="Endereço:  " />
                     <p:inputText id="endereco2" 
-                                 value="#{gerenciarUsuarioControle.usuario.endereco}"/>
+                                 value="#{gerenciarUsuarioControle.usuario.endereco}"
+                                 required="true"
+                                 requiredMessage="Campo obrigatório"/>
                     <h:outputLabel value="Telefone:  " />
                     <p:inputText id="telefone2" 
-                                 value="#{gerenciarUsuarioControle.usuario.telefone}"/>
+                                 value="#{gerenciarUsuarioControle.usuario.telefone}"
+                                 required="true"
+                                 requiredMessage="Campo obrigatório"/>
                     <h:outputLabel value="Data nascimento:  " />
                     <p:calendar id="data2" pattern="dd/MM/yyyy"
                                 value="#{gerenciarUsuarioControle.usuario.dataNascimento}" 
@@ -125,12 +140,16 @@
                                 locale="pt"/>
                     <h:outputLabel value="Login:  " />
                     <p:inputText id="login2" 
-                                 value="#{gerenciarUsuarioControle.usuario.login}">
-                        <p:ajax event="change" listener="#{gerenciarUsuarioControle.converter()}"
+                                 value="#{gerenciarUsuarioControle.usuario.login}"
+                                 required="true"
+                                 requiredMessage="Campo obrigatório">
+                                <p:ajax event="change" listener="#{gerenciarUsuarioControle.converter()}"
                                 update="login2" />
                     </p:inputText>
                     <h:outputLabel value="Senha" />
-                    <p:password value="#{gerenciarUsuarioControle.usuario.senha}"/>
+                    <p:password value="#{gerenciarUsuarioControle.usuario.senha}"
+                                required="true"
+                                requiredMessage="Campo obrigatório"/>
                     <p:commandButton value="cancelar" immediate="true" 
                                      action="#{gerenciarUsuarioControle.fecharPopupAlteracao()}"
                                      update="formAlteracao"/>
